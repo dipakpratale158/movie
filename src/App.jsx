@@ -17,6 +17,7 @@ import PageNotFound from "./pages/404/PageNotFound";
 function App() {
     //using this hook call
     const dispatch = useDispatch();
+    ////state is url,geners
     const { url } = useSelector((state) => state.home);
     console.log(url);
 
@@ -66,10 +67,14 @@ function App() {
 //     fetchDataFromApi('/movies/populer').then(res=>console.log(resuult))
 //using this all data store in store
 // dispach(getApiConfigure(res))  res any value
-}
+// }
 
 
     return (
+        // <div>
+        //     App
+        //     {url?.total_pages} totaql pages count show
+        //     <div/>
         <BrowserRouter>
             <Header />
             <Routes>
