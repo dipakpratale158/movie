@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
-
+////////////////////////
 import { useSelector, useDispatch } from "react-redux";
+/////////////
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
 
 import Header from "./components/header/Header";
@@ -14,6 +15,7 @@ import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/PageNotFound";
 
 function App() {
+    //using this hook call
     const dispatch = useDispatch();
     const { url } = useSelector((state) => state.home);
     console.log(url);
@@ -62,7 +64,9 @@ function App() {
 //     ///to get movies data
 // const apiTesting=()=>{
 //     fetchDataFromApi('/movies/populer').then(res=>console.log(resuult))
-// }
+//using this all data store in store
+// dispach(getApiConfigure(res))  res any value
+}
 
 
     return (

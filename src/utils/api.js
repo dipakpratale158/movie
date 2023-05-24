@@ -24,3 +24,6 @@ export const fetchDataFromApi = async (url, params) => {
         return err;
     }
 };
+
+
+//after compler redux toolkit then chak using redux dev tool
