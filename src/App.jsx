@@ -30,6 +30,7 @@ function App() {
     useEffect(() => {
         //apitesting()
         fetchApiConfig();
+        //moves and tv
         genresCall();
     }, []);
 //////////////////
@@ -48,6 +49,8 @@ function App() {
         });
     };
 
+
+    ////////////////////moves tv endpoint
     const genresCall = async () => {
         let promises = [];
         let endPoints = ["tv", "movie"];
@@ -60,8 +63,11 @@ function App() {
         const data = await Promise.all(promises);
         console.log(data);
         data.map(({ genres }) => {
+            //id key value response
             return genres.map((item) => (allGenres[item.id] = item));
         });
+        //go to store and save
+        console.log(allGenres)
 
         dispatch(getGenres(allGenres));
     };
