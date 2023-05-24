@@ -16,6 +16,7 @@ import Genres from "../genres/Genres";
 import "./style.scss";
 
 const Carousel = ({ data, loading, endpoint, title }) => {
+   ///////ref
     const carouselContainer = useRef();
     const { url } = useSelector((state) => state.home);
     const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
 
     const skItem = () => {
         return (
+            // skeleton use animted
             <div className="skeletonItem">
                 <div className="posterBlock skeleton"></div>
                 <div className="textBlock">
@@ -48,6 +50,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
 
     return (
         <div className="carousel">
+            {/* //scrolling arrow width 100% move logic */}
             <ContentWrapper>
                 {title && <div className="carouselTitle">{title}</div>}
                 <BsFillArrowLeftCircleFill
@@ -58,16 +61,22 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                     className="carouselRighttNav arrow"
                     onClick={() => navigation("right")}
                 />
+                {/* //data load completely the this code */}
                 {!loading ? (
+                    //////////////////////////ref select this div element then use useref
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
+                            //if incase not fech image
+                            //poster_path chech network tab
                             const posterUrl = item.poster_path
                                 ? url.poster + item.poster_path
                                 : PosterFallback;
                             return (
                                 <div
                                     key={item.id}
+                                   
                                     className="carouselItem"
+                                //   detali page open
                                     onClick={() =>
                                         navigate(
                                             `/${item.media_type || endpoint}/${
@@ -88,10 +97,12 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                         />
                                     </div>
                                     <div className="textBlock">
+                                       {/* //if not find title then use name becuse tv seriam name is  */}
                                         <span className="title">
                                             {item.title || item.name}
                                         </span>
                                         <span className="date">
+                                        {/* dayjs  is library */}
                                             {dayjs(item.release_date || item.first_air_date).format(
                                                 "MMM D, YYYY"
                                             )}
@@ -102,6 +113,8 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                         })}
                     </div>
                 ) : (
+
+                    //data load ho raha he to ye code
                     <div className="loadingSkeleton">
                         {skItem()}
                         {skItem()}
