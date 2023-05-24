@@ -87,8 +87,11 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                 >
                                     <div className="posterBlock">
                                         <Img src={posterUrl} />
+                                        {/* vote_average ckeck network ///////// */}
                                         <CircleRating
-                                            rating={item.vote_average.toFixed(
+                                            rating={item.vote_average.
+                                                //only one value after point
+                                                toFixed(
                                                 1
                                             )}
                                         />
