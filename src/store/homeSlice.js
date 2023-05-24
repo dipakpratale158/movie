@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+initialstate={
+    url: {},
+    genres: {},
+}
+///////////////////////////
 export const homeSlice = createSlice({
     name: "home",
-    initialState: {
-        url: {},
-        genres: {},
-    },
+    initialState: initialstate,
     reducers: {
         getApiConfiguration: (state, action) => {
             state.url = action.payload;

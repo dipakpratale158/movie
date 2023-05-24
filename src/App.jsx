@@ -19,6 +19,7 @@ function App() {
     console.log(url);
 
     useEffect(() => {
+        //apitesting()
         fetchApiConfig();
         genresCall();
     }, []);
@@ -54,6 +55,15 @@ function App() {
 
         dispatch(getGenres(allGenres));
     };
+
+
+
+
+//     ///to get movies data
+// const apiTesting=()=>{
+//     fetchDataFromApi('/movies/populer').then(res=>console.log(resuult))
+// }
+
 
     return (
         <BrowserRouter>
