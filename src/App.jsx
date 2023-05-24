@@ -32,11 +32,12 @@ function App() {
         fetchApiConfig();
         genresCall();
     }, []);
-
+//////////////////
     const fetchApiConfig = () => {
         fetchDataFromApi("/configuration").then((res) => {
             console.log(res);
-
+//network ta confing inside  images backdrop  res.images.secure_base_url all are inside config
+//three types of images
             const url = {
                 backdrop: res.images.secure_base_url + "original",
                 poster: res.images.secure_base_url + "original",

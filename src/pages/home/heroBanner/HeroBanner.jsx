@@ -5,8 +5,9 @@ import { useSelector } from "react-redux";
 import "./style.scss";
 //import fech hook
 import useFetch from "../../../hooks/useFetch";
-
+////image
 import Img from "../../../components/lazyLoadImage/Img";
+///center
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 const HeroBanner = () => {
@@ -36,9 +37,11 @@ const HeroBanner = () => {
 
     return (
         <div className="heroBanner">
+            {/* all images finf componenet lazy loading image */}
             {!loading && (
                 <div className="backdrop-img">
                     <Img src={background} />
+                      {/* //image path save in backdrop */}
                 </div>
             )}
 
