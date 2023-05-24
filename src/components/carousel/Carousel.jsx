@@ -116,6 +116,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
 
                     //data load ho raha he to ye code
                     <div className="loadingSkeleton">
+                        {/* //animated loading */}
                         {skItem()}
                         {skItem()}
                         {skItem()}
