@@ -60,7 +60,7 @@ const Header = () => {
         setMobileMenu(true);
         setShowSearch(false);
     };
-
+////////////when user click on movies then go movies page
     const navigationHandler = (type) => {
         if (type === "movie") {
             navigate("/explore/movie");
@@ -71,6 +71,7 @@ const Header = () => {
     };
 
     return (
+        //when you have conditionaly added then use curly bracket
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
             <ContentWrapper>
                 <div className="logo" onClick={() => navigate("/")}>
@@ -93,16 +94,19 @@ const Header = () => {
                         <HiOutlineSearch onClick={openSearch} />
                     </li>
                 </ul>
-
+{/* ////////////////////mobile view */}
                 <div className="mobileMenuItems">
                     <HiOutlineSearch onClick={openSearch} />
                     {mobileMenu ? (
+                        //close button
                         <VscChromeClose onClick={() => setMobileMenu(false)} />
                     ) : (
+                        //menu button
                         <SlMenu onClick={openMobileMenu} />
                     )}
                 </div>
             </ContentWrapper>
+            {/* ///////////////////search */}
             {showSearch && (
                 <div className="searchBar">
                     <ContentWrapper>
