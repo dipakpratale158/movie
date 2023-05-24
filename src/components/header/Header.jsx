@@ -17,7 +17,7 @@ const Header = () => {
     const [showSearch, setShowSearch] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
-
+//one page to another pagre when our page change then star next page is top
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
@@ -30,11 +30,12 @@ const Header = () => {
                 setShow("show");
             }
         } else {
+            //<200
             setShow("top");
         }
         setLastScrollY(window.scrollY);
     };
-
+//scrolling effect
     useEffect(() => {
         window.addEventListener("scroll", controlNavbar);
         return () => {
