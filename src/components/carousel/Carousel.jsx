@@ -95,7 +95,10 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                                 1
                                             )}
                                         />
+                                        {/* /////////Genres//// */}
                                         <Genres
+                                        //genre_ids inside network tab
+                                        //0-2 only two item thts reason two word presesnt
                                             data={item.genre_ids.slice(0, 2)}
                                         />
                                     </div>
