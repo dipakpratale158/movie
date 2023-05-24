@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchDataFromApi } from "../utils/api";
+//////////////////////////
+// if url change then useeffect  method run 
 const useFetch = (url) => {
+    //not load initially
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);
@@ -9,7 +12,7 @@ const useFetch = (url) => {
         setLoading("loading...");
         setData(null);
         setError(null);
-
+//if load
         fetchDataFromApi(url)
             .then((res) => {
                 setLoading(false);
