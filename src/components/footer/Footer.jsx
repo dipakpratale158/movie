@@ -22,13 +22,8 @@ const Footer = () => {
                     <li className="menuItem">FAQ</li>
                 </ul>
                 <div className="infoText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
-                </div>
+                Discover a wide selection of movies and immerse yourself in the world of cinema. From thrilling action-packed adventures to heartwarming dramas, there's something for everyone. Explore captivating stories, talented actors, and masterful filmmaking. Experience the magic of movies and let your imagination soar.
+</div>
                 <div className="socialIcons">
                     <span className="icon">
                         <FaFacebookF />
