@@ -8,10 +8,11 @@ import useFetch from "../../../hooks/useFetch";
 
 const Popular = () => {
     const [endpoint, setEndpoint] = useState("movie");
-
+///////4/
     const { data, loading } = useFetch(`/${endpoint}/popular`);
 
     const onTabChange = (tab) => {
+        /////////3/
         setEndpoint(tab === "Movies" ? "movie" : "tv");
     };
 
@@ -19,14 +20,17 @@ const Popular = () => {
         <div className="carouselSection">
             <ContentWrapper>
                 <span className="carouselTitle">What's Popular</span>
+               {/* /////1/////// */}
                 <SwitchTabs
                     data={["Movies", "TV Shows"]}
                     onTabChange={onTabChange}
                 />
             </ContentWrapper>
+            {/* //2// */}
             <Carousel
                 data={data?.results}
                 loading={loading}
+                /////go courasiol//////
                 endpoint={endpoint}
             />
         </div>

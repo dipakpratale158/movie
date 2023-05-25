@@ -14,23 +14,25 @@ import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 
 import "./style.scss";
-
+///add endpoint populer5/
 const Carousel = ({ data, loading, endpoint, title }) => {
-   ///////ref
+   ///////ref scrowll arrow
     const carouselContainer = useRef();
     const { url } = useSelector((state) => state.home);
     const navigate = useNavigate();
 
     const navigation = (dir) => {
+        ////////
         const container = carouselContainer.current;
 
         const scrollAmount =
             dir === "left"
                 ? container.scrollLeft - (container.offsetWidth + 20)
                 : container.scrollLeft + (container.offsetWidth + 20);
-
+//hjavascript scroll to method
         container.scrollTo({
             left: scrollAmount,
+            //smoothly slide ho
             behavior: "smooth",
         });
     };
@@ -64,6 +66,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 {/* //data load completely the this code */}
                 {!loading ? (
                     //////////////////////////ref select this div element then use useref
+                    /////////scroll arrow
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
                             //if incase not fech image
@@ -79,6 +82,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                 //   detali page open
                                     onClick={() =>
                                         navigate(
+                                            //endpoint add
                                             `/${item.media_type || endpoint}/${
                                                 item.id
                                             }`
