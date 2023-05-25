@@ -1,10 +1,12 @@
 import React from "react";
+///////
 import ReactPlayer from "react-player/youtube";
 
 import "./style.scss";
 
 const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
     const hidePopup = () => {
+        /////////////  popshow when true
         setShow(false);
         setVideoId(null);
     };
@@ -15,6 +17,7 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
                 <span className="closeBtn" onClick={hidePopup}>
                     Close
                 </span>
+                {/* //reactrplare */}
                 <ReactPlayer
                     url={`https://www.youtube.com/watch?v=${videoId}`}
                     controls

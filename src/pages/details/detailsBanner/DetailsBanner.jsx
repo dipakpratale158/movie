@@ -14,7 +14,7 @@ import PosterFallback from "../../../assets/no-poster.png";
 ///////////////////
 import { PlayIcon } from "../Playbtn";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
-
+///////////////////vidio
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);
     const [videoId, setVideoId] = useState(null);
@@ -26,8 +26,9 @@ const DetailsBanner = ({ video, crew }) => {
     const { url } = useSelector((state) => state.home);
 ///////////_genres
     const _genres = data?.genres?.map((g) => g.id);
-
+/////////////////director/
     const director = crew?.filter((f) => f.job === "Director");
+   /////writer
     const writer = crew?.filter(
         (f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer"
     );
@@ -104,7 +105,9 @@ const DetailsBanner = ({ video, crew }) => {
                                             <div
                                                 className="playbtn"
                                                 onClick={() => {
+                                                    ///pop up show
                                                     setShow(true);
+                                                    //go destructre component above
                                                     setVideoId(video.key);
                                                 }}
                                             >
@@ -163,6 +166,8 @@ const DetailsBanner = ({ video, crew }) => {
                                             )}
                                         </div>
 {/* //go detail */}
+
+                                       {/* ///directer */}
                                         {director?.length > 0 && (
                                             <div className="info">
                                                 <span className="text bold">
@@ -171,7 +176,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                 <span className="text">
                                                     {director?.map((d, i) => (
                                                         <span key={i}>
-                                                            {d.name}
+                                                            {d.name} //multiple directer
                                                             {director.length -
                                                                 1 !==
                                                                 i && ", "}
@@ -180,7 +185,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                 </span>
                                             </div>
                                         )}
-
+                                     {/* ///writeer */}
                                         {writer?.length > 0 && (
                                             <div className="info">
                                                 <span className="text bold">
@@ -198,7 +203,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                 </span>
                                             </div>
                                         )}
-
+                                 {/* //networktab created_by */}
                                         {data?.created_by?.length > 0 && (
                                             <div className="info">
                                                 <span className="text bold">
@@ -222,6 +227,7 @@ const DetailsBanner = ({ video, crew }) => {
                                         )}
                                     </div>
                                 </div>
+                                {/* ///////////vidiopop */}
                                 <VideoPopup
                                     show={show}
                                     setShow={setShow}
