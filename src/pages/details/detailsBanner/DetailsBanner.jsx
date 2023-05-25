@@ -11,6 +11,7 @@ import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
+///////////////////
 import { PlayIcon } from "../Playbtn";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
@@ -98,6 +99,8 @@ const DetailsBanner = ({ video, crew }) => {
                                                     1
                                                 )}
                                             />
+
+                                            {/* ///folder */}
                                             <div
                                                 className="playbtn"
                                                 onClick={() => {
@@ -111,7 +114,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                 </span>
                                             </div>
                                         </div>
-
+{/* ////////////// */}
                                         <div className="overview">
                                             <div className="heading">
                                                 Overview
@@ -132,6 +135,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                     </span>
                                                 </div>
                                             )}
+                                            {/* //Release Date/ */}
                                             {data.release_date && (
                                                 <div className="infoItem">
                                                     <span className="text bold">
@@ -144,6 +148,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                     </span>
                                                 </div>
                                             )}
+                                            {/* /// Runtime*/}
                                             {data.runtime && (
                                                 <div className="infoItem">
                                                     <span className="text bold">
@@ -157,7 +162,7 @@ const DetailsBanner = ({ video, crew }) => {
                                                 </div>
                                             )}
                                         </div>
-
+{/* //go detail */}
                                         {director?.length > 0 && (
                                             <div className="info">
                                                 <span className="text bold">
