@@ -22,6 +22,7 @@ const Details = () => {
         <div>
             {/* //after runtime/////// */}
             <DetailsBanner video={data?.results?.[0]} crew={credits?.crew} />
+           {/* //////cast add  after cast component */}
             <Cast data={credits?.cast} loading={creditsLoading} />
             <VideosSection data={data} loading={loading} />
             <Similar mediaType={mediaType} id={id} />
