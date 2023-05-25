@@ -17,19 +17,20 @@ import VideoPopup from "../../../components/videoPopup/VideoPopup";
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);
     const [videoId, setVideoId] = useState(null);
-
+////////1
     const { mediaType, id } = useParams();
+    //////////2
     const { data, loading } = useFetch(`/${mediaType}/${id}`);
 
     const { url } = useSelector((state) => state.home);
-
+///////////_genres
     const _genres = data?.genres?.map((g) => g.id);
 
     const director = crew?.filter((f) => f.job === "Director");
     const writer = crew?.filter(
         (f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer"
     );
-
+///3
     const toHoursAndMinutes = (totalMinutes) => {
         const hours = Math.floor(totalMinutes / 60);
         const minutes = totalMinutes % 60;
@@ -38,16 +39,22 @@ const DetailsBanner = ({ video, crew }) => {
 
     return (
         <div className="detailsBanner">
+            {/* //data aa chuka he */}
             {!loading ? (
                 <>
+                {/* //data undefind nahi he */}
                     {!!data && (
                         <React.Fragment>
+                            {/* //backdrop image */}
                             <div className="backdrop-img">
                                 <Img src={url.backdrop + data.backdrop_path} />
                             </div>
                             <div className="opacity-layer"></div>
                             <ContentWrapper>
                                 <div className="content">
+                                    {/* //two div left right */}
+                                    {/* //conditionally if not find path from idmd */}
+                                 {/* if yes */}
                                     <div className="left">
                                         {data.poster_path ? (
                                             <Img
@@ -57,25 +64,32 @@ const DetailsBanner = ({ video, crew }) => {
                                                     data.poster_path
                                                 }
                                             />
-                                        ) : (
+                                        ) : 
+                                        // if not yes
+                                        (
                                             <Img
                                                 className="posterImg"
+                                                //add PosterFallback already set in header
                                                 src={PosterFallback}
                                             />
                                         )}
                                     </div>
+                                    {/* ///////////right */}
                                     <div className="right">
                                         <div className="title">
                                             {`${
+                                                // tv||movies
                                                 data.name || data.title
                                             } (${dayjs(
                                                 data?.release_date
                                             ).format("YYYY")})`}
                                         </div>
+
+                                        {/* //subtitle */}
                                         <div className="subtitle">
                                             {data.tagline}
                                         </div>
-
+                                          {/* ///go abovew _genres method */}
                                         <Genres data={_genres} />
 
                                         <div className="row">

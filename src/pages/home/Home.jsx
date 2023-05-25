@@ -15,6 +15,7 @@ const Home = () => {
             <Trending />
             {/* ///////////// */}
             <Popular />
+            {/* ////////////// */}
             <TopRated />
         </div>
     );

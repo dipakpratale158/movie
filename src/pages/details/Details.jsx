@@ -10,7 +10,9 @@ import Similar from "./carousels/Similar";
 import Recommendation from "./carousels/Recommendation";
 
 const Details = () => {
+    ///2//go detail banner
     const { mediaType, id } = useParams();
+    ////1
     const { data, loading } = useFetch(`/${mediaType}/${id}/videos`);
     const { data: credits, loading: creditsLoading } = useFetch(
         `/${mediaType}/${id}/credits`
