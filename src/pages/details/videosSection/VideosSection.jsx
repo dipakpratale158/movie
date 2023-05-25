@@ -20,7 +20,7 @@ const VideosSection = ({ data, loading }) => {
             </div>
         );
     };
-
+///after offitial vidio click open youtube
     return (
         <div className="videosSection">
             <ContentWrapper>
@@ -32,16 +32,19 @@ const VideosSection = ({ data, loading }) => {
                                 key={video.id}
                                 className="videoItem"
                                 onClick={() => {
+                                    /////
                                     setVideoId(video.key);
                                     setShow(true);
                                 }}
                             >
+                                {/* ///////////////////image */}
                                 <div className="videoThumbnail">
                                     <Img
                                         src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
                                     />
                                     <PlayIcon />
                                 </div>
+                                {/* ////vidio name */}
                                 <div className="videoTitle">{video.name}</div>
                             </div>
                         ))}

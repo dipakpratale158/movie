@@ -15,6 +15,7 @@ import Genres from "../genres/Genres";
 
 import "./style.scss";
 ///add endpoint populer5/
+////////title destructure simiiler
 const Carousel = ({ data, loading, endpoint, title }) => {
    ///////ref scrowll arrow
     const carouselContainer = useRef();
@@ -54,6 +55,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
         <div className="carousel">
             {/* //scrolling arrow width 100% move logic */}
             <ContentWrapper>
+                {/* ////////////ttitle similer */}
                 {title && <div className="carouselTitle">{title}</div>}
                 <BsFillArrowLeftCircleFill
                     className="carouselLeftNav arrow"
