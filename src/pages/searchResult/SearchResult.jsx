@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+//////////infinite fech movies
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import "./style.scss";
 
 import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
+//create both
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
@@ -14,10 +16,15 @@ const SearchResult = () => {
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
     const [loading, setLoading] = useState(false);
+    //goe app.js this qury heare
     const { query } = useParams();
-
+/////first create 
     const fetchInitialData = () => {
+        //when use effect run 1
+        //loader true
         setLoading(true);
+///        //when use effect run 2
+
         fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
             (res) => {
                 setData(res);
@@ -26,7 +33,7 @@ const SearchResult = () => {
             }
         );
     };
-
+//if this call boyh merge else first data loss pages
     const fetchNextPageData = () => {
         fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
             (res) => {
@@ -42,11 +49,12 @@ const SearchResult = () => {
             }
         );
     };
-
+////////2
     useEffect(() => {
         setPageNum(1);
         fetchInitialData();
     }, [query]);
+    ///if anytimkre qury change api call fetchapi
 
     return (
         <div className="searchResultsPage">

@@ -95,6 +95,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/:mediaType/:id" element={<Details />} />
                 {/* search */}
+                {/* /////////////////search result */}
                 <Route path="/search/:query" element={<SearchResult />} />
                {/* if medi type tv or movews */}
                 <Route path="/explore/:mediaType" element={<Explore />} />
