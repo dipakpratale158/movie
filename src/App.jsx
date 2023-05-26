@@ -98,6 +98,7 @@ function App() {
                 {/* /////////////////search result */}
                 <Route path="/search/:query" element={<SearchResult />} />
                {/* if medi type tv or movews */}
+               {/* ///////////explore */}
                 <Route path="/explore/:mediaType" element={<Explore />} />
               {/* if not anyone rote finfd thn this */}
                 <Route path="*" element={<PageNotFound />} />

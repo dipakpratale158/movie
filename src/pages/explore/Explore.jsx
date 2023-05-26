@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
+//library
 import Select from "react-select";
 
 import "./style.scss";
@@ -12,7 +13,7 @@ import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 
 let filters = {};
-
+///////////////sorting
 const sortbyData = [
     { value: "popularity.desc", label: "Popularity Descending" },
     { value: "popularity.asc", label: "Popularity Ascending" },
@@ -62,6 +63,7 @@ const Explore = () => {
         });
     };
 
+    //expolore tv to moves page go beacuse mediya type
     useEffect(() => {
         filters = {};
         setData(null);
@@ -71,6 +73,8 @@ const Explore = () => {
         fetchInitialData();
     }, [mediaType]);
 
+
+    //onchange select game
     const onChange = (selectedItems, action) => {
         if (action.name === "sortby") {
             setSortby(selectedItems);
@@ -106,11 +110,14 @@ const Explore = () => {
                             : "Explore Movies"}
                     </div>
                     <div className="filters">
+                        {/* use api fiter  */}
+                        {/* /// */}
                         <Select
                             isMulti
                             name="genres"
                             value={genre}
                             closeMenuOnSelect={false}
+                            ////////
                             options={genresData?.genres}
                             getOptionLabel={(option) => option.name}
                             getOptionValue={(option) => option.id}
