@@ -13,6 +13,7 @@ import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
 
 const SearchResult = () => {
+    ///data
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
     const [loading, setLoading] = useState(false);
@@ -37,14 +38,20 @@ const SearchResult = () => {
     const fetchNextPageData = () => {
         fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
             (res) => {
+                // data
                 if (data?.results) {
                     setData({
+                        //purana data add merge
                         ...data,
+                        // naya data ka result purana data =>...data?.results  ,naya data =>...res.results
                         results: [...data?.results, ...res.results],
                     });
                 } else {
+                    //initialy data null pass datr as it is jo bhi he wo
                     setData(res);
                 }
+
+                //fisr api call 1 page data add 1 next pagee  data
                 setPageNum((prev) => prev + 1);
             }
         );
@@ -61,6 +68,7 @@ const SearchResult = () => {
             {loading && <Spinner initial={true} />}
             {!loading && (
                 <ContentWrapper>
+                    {/* //data */}
                     {data?.results?.length > 0 ? (
                         <>
                             <div className="pageTitle">
