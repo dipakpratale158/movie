@@ -9,6 +9,7 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 //create both
 import MovieCard from "../../components/movieCard/MovieCard";
+/////////spiner 
 import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
 
@@ -58,6 +59,7 @@ const SearchResult = () => {
     };
 ////////2
     useEffect(() => {
+        /////
         setPageNum(1);
         fetchInitialData();
     }, [query]);
@@ -73,21 +75,31 @@ const SearchResult = () => {
                         <>
                             <div className="pageTitle">
                                 {`Search ${
+
+                                    //qury searech ki uska ek hi result he
                                     data?.total_results > 1
                                         ? "results"
                                         : "result"
                                 } of '${query}'`}
                             </div>
+                            {/* //////infinite scrolling */}
                             <InfiniteScroll
                                 className="content"
+                                //data lenth 20 initialy undefinfd []
                                 dataLength={data?.results?.length || []}
                                 next={fetchNextPageData}
+                                ///total_pages find netwotrk tab
                                 hasMore={pageNum <= data?.total_pages}
+                                //loader
                                 loader={<Spinner />}
                             >
-                                {data?.results.map((item, index) => {
-                                    if (item.media_type === "person") return;
+                                {/* //whenever find data please add optional chining ? 
+                                */}                               {data?.results.map((item, index) => {
+                                    if (item.media_type === "person") 
+                                    //not show frontend
+                                    return;
                                     return (
+                                        //moves card
                                         <MovieCard
                                             key={index}
                                             data={item}
@@ -98,6 +110,7 @@ const SearchResult = () => {
                             </InfiniteScroll>
                         </>
                     ) : (
+                        //if data <=0
                         <span className="resultNotFound">
                             Sorry, Results not found!
                         </span>
