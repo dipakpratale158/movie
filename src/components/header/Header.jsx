@@ -15,6 +15,7 @@ const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [query, setQuery] = useState("");
     const [showSearch, setShowSearch] = useState("");
+    /////////////
     const navigate = useNavigate();
     const location = useLocation();
 //one page to another pagre when our page change then star next page is top
@@ -45,6 +46,7 @@ const Header = () => {
 
     const searchQueryHandler = (event) => {
         if (event.key === "Enter" && query.length > 0) {
+            ////////////////
             navigate(`/search/${query}`);
             setTimeout(() => {
                 setShowSearch(false);
@@ -75,6 +77,7 @@ const Header = () => {
         //when you have conditionaly added then use curly bracket
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
             <ContentWrapper>
+                {/* //movies logo pe click karne ke baad ayenge home page */}
                 <div className="logo" onClick={() => navigate("/")}>
                     <img src={logo} alt="" />
                 </div>
